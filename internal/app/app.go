@@ -8,6 +8,7 @@ import (
 	"github.com/lgu-elo/gateway/pkg/logger"
 	"github.com/lgu-elo/gateway/pkg/rpc"
 	"github.com/lgu-elo/user/internal/adapters/database"
+	auth "github.com/lgu-elo/user/internal/auth"
 	"github.com/lgu-elo/user/internal/config"
 	"github.com/lgu-elo/user/internal/server"
 	"github.com/lgu-elo/user/internal/user"
@@ -42,7 +43,7 @@ func CreateApp() fx.Option {
 			fx.Annotate(user.NewStorage, fx.As(new(user.Repository))),
 			fx.Annotate(user.NewService, fx.As(new(user.IService))),
 			fx.Annotate(user.NewHandler, fx.As(new(user.IHandler))),
-			//fx.Annotate(auth.NewClient, fx.As(new(auth.Client))),
+			fx.Annotate(auth.NewClient, fx.As(new(auth.Client))),
 
 			server.NewAPI,
 

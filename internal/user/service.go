@@ -1,10 +1,12 @@
 package user
 
 import (
+	"context"
+
 	"github.com/pkg/errors"
 
-	//"github.com/lgu-elo/auth/pkg/pb"
-	//"github.com/lgu-elo/user/internal/auth"
+	"github.com/lgu-elo/auth/pkg/pb"
+	"github.com/lgu-elo/user/internal/auth"
 	"github.com/lgu-elo/user/internal/user/model"
 )
 
@@ -14,17 +16,17 @@ type (
 		GetUserById(id int) (*model.User, error)
 		UpdateUser(user *model.User) (*model.User, error)
 		DeleteUser(id int) error
-		//CreateUser(creds *pb.BasicCredentials) error
+		CreateUser(creds *pb.BasicCredentials) error
 	}
 
 	service struct {
-		repo Repository
-		//authClient auth.Client
+		repo       Repository
+		authClient auth.Client
 	}
 )
 
-func NewService(repo Repository /*, authClient auth.Client */) IService {
-	return &service{repo /*authClient*/}
+func NewService(repo Repository, authClient auth.Client) IService {
+	return &service{repo, authClient}
 }
 
 func (s *service) DeleteUser(id int) error {
@@ -59,14 +61,14 @@ func (s *service) UpdateUser(user *model.User) (*model.User, error) {
 	return user, nil
 }
 
-//func (s *service) CreateUser(creds *pb.BasicCredentials) error {
-//	_, errRegister := s.authClient.Register(context.Background(), creds)
-//	if errRegister != nil {
-//		return errors.Wrap(errRegister, "can't register user")
-//	}
-//
-//	return nil
-//}
+func (s *service) CreateUser(creds *pb.BasicCredentials) error {
+	_, errRegister := s.authClient.Register(context.Background(), creds)
+	if errRegister != nil {
+		return errors.Wrap(errRegister, "can't register user")
+	}
+
+	return nil
+}
 
 func (s *service) GetUserById(id int) (*model.User, error) {
 	user, err := s.repo.GetById(id)
