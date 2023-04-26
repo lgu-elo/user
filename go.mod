@@ -5,8 +5,6 @@ go 1.19
 require (
 	github.com/ilyakaznacheev/cleanenv v1.4.2
 	github.com/jackc/pgx/v5 v5.3.1
-	github.com/lgu-elo/gateway v0.0.0-20230317063111-bae78182933d
-	github.com/lgu-elo/auth v0.0.0-20230317033013-7dc119e66e26
 	github.com/pkg/errors v0.9.1
 	github.com/sirupsen/logrus v1.9.0
 	github.com/stretchr/testify v1.8.2
@@ -15,6 +13,8 @@ require (
 	google.golang.org/grpc v1.53.0
 	google.golang.org/protobuf v1.30.0
 )
+
+require github.com/rogpeppe/go-internal v1.10.0 // indirect
 
 require (
 	github.com/BurntSushi/toml v1.2.1 // indirect
@@ -25,6 +25,7 @@ require (
 	github.com/jackc/pgservicefile v0.0.0-20221227161230-091c0ba34f0a // indirect
 	github.com/joho/godotenv v1.5.1 // indirect
 	github.com/kr/text v0.2.0 // indirect
+	github.com/lgu-elo/gateway v0.0.0-20230426212724-a67ab443afa0
 	github.com/pmezard/go-difflib v1.0.0 // indirect
 	go.uber.org/atomic v1.10.0 // indirect
 	go.uber.org/dig v1.16.1 // indirect

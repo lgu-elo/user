@@ -3,7 +3,7 @@ package user
 import (
 	"context"
 
-	auth_pb "github.com/lgu-elo/auth/pkg/pb"
+	//auth_pb "github.com/lgu-elo/auth/pkg/pb"
 	"github.com/lgu-elo/user/internal/user/model"
 	"github.com/lgu-elo/user/pkg/pb"
 	"github.com/sirupsen/logrus"
@@ -22,7 +22,7 @@ type (
 		GetUserById(c context.Context, user *pb.UserWithID) (*pb.User, error)
 		UpdateUser(c context.Context, user *pb.User) (*pb.User, error)
 		DeleteUser(c context.Context, user *pb.UserWithID) (*pb.Empty, error)
-		CreateUser(c context.Context, user *pb.User) (*pb.Empty, error)
+		//CreateUser(c context.Context, user *pb.User) (*pb.Empty, error)
 	}
 )
 
@@ -90,17 +90,17 @@ func (h *userHandler) DeleteUser(c context.Context, user *pb.UserWithID) (*pb.Em
 	return &pb.Empty{}, nil
 }
 
-func (h *userHandler) CreateUser(c context.Context, user *pb.User) (*pb.Empty, error) {
-	err := h.service.CreateUser(&auth_pb.BasicCredentials{
-		Username: user.Login,
-		Password: user.Password,
-		Name:     user.Name,
-		Role:     user.Role,
-	})
-
-	if err != nil {
-		return nil, err
-	}
-
-	return &pb.Empty{}, nil
-}
+//func (h *userHandler) CreateUser(c context.Context, user *pb.User) (*pb.Empty, error) {
+//	err := h.service.CreateUser(&auth_pb.BasicCredentials{
+//		Username: user.Login,
+//		Password: user.Password,
+//		Name:     user.Name,
+//		Role:     user.Role,
+//	})
+//
+//	if err != nil {
+//		return nil, err
+//	}
+//
+//	return &pb.Empty{}, nil
+//}
