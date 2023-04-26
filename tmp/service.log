@@ -595,3 +595,21 @@ time="26.04.2023 00:27:49" level=info msg="[core] pickfirstBalancer: UpdateSubCo
 time="26.04.2023 00:27:49" level=info msg="[core] [Channel #2] Channel Connectivity change to READY" system=system
 time="26.04.2023 00:28:05" level=info msg=admin
 time="26.04.2023 00:28:05" level=info msg="finished unary call with code OK" grpc.code=OK grpc.method=GetUserById grpc.service=user.UserService grpc.start_time="2023-04-26T00:28:05+03:00" grpc.time_ms=2.311 peer.address="127.0.0.1:55524" span.kind=server system=grpc
+time="27.04.2023 01:22:11" level=info msg="[core] [Server #1] Server created" system=system
+time="27.04.2023 01:22:11" level=info msg="[core] [Channel #2] Channel created" system=system
+time="27.04.2023 01:22:11" level=info msg="[core] [Channel #2] original dial target is: \"localhost:8081\"" system=system
+time="27.04.2023 01:22:11" level=info msg="[core] [Channel #2] parsed dial target is: {Scheme:localhost Authority: URL:{Scheme:localhost Opaque:8081 User: Host: Path: RawPath: OmitHost:false ForceQuery:false RawQuery: Fragment: RawFragment:}}" system=system
+time="27.04.2023 01:22:11" level=info msg="[core] [Channel #2] fallback to scheme \"passthrough\"" system=system
+time="27.04.2023 01:22:11" level=info msg="[core] [Channel #2] parsed dial target is: {Scheme:passthrough Authority: URL:{Scheme:passthrough Opaque: User: Host: Path:/localhost:8081 RawPath: OmitHost:false ForceQuery:false RawQuery: Fragment: RawFragment:}}" system=system
+time="27.04.2023 01:22:11" level=info msg="[core] [Channel #2] Channel authority set to \"localhost:8081\"" system=system
+time="27.04.2023 01:22:11" level=info msg="[core] [Channel #2] Resolver state updated: {\n  \"Addresses\": [\n    {\n      \"Addr\": \"localhost:8081\",\n      \"ServerName\": \"\",\n      \"Attributes\": null,\n      \"BalancerAttributes\": null,\n      \"Type\": 0,\n      \"Metadata\": null\n    }\n  ],\n  \"ServiceConfig\": null,\n  \"Attributes\": null\n} (resolver returned new addresses)" system=system
+time="27.04.2023 01:22:11" level=info msg="[core] [Channel #2] Channel switches to new LB policy \"pick_first\"" system=system
+time="27.04.2023 01:22:11" level=info msg="[core] [Channel #2 SubChannel #3] Subchannel created" system=system
+time="27.04.2023 01:22:11" level=info msg="[core] [Channel #2] Channel Connectivity change to CONNECTING" system=system
+time="27.04.2023 01:22:11" level=info msg="[core] [Server #1 ListenSocket #4] ListenSocket created" system=system
+time="27.04.2023 01:22:11" level=info msg="[core] [Channel #2 SubChannel #3] Subchannel Connectivity change to CONNECTING" system=system
+time="27.04.2023 01:22:11" level=info msg="[core] [Channel #2 SubChannel #3] Subchannel picks a new address \"localhost:8081\" to connect" system=system
+time="27.04.2023 01:22:11" level=info msg="[core] pickfirstBalancer: UpdateSubConnState: 0xc000012600, {CONNECTING <nil>}" system=system
+time="27.04.2023 01:22:11" level=info msg="[core] [Channel #2 SubChannel #3] Subchannel Connectivity change to READY" system=system
+time="27.04.2023 01:22:11" level=info msg="[core] pickfirstBalancer: UpdateSubConnState: 0xc000012600, {READY <nil>}" system=system
+time="27.04.2023 01:22:11" level=info msg="[core] [Channel #2] Channel Connectivity change to READY" system=system
